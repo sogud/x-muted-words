@@ -13,17 +13,20 @@
       <button id="open-settings" type="button">开始添加</button>
       <p class="hint">点击后打开 X 设置页，再按页面提示完成添加。</p>
       <details>
-        <summary>高级设置</summary>
-        <button id="edit-pack" class="secondary" type="button">
-          编辑自定义词
-        </button>
-        <span id="pack-status" class="status" role="status"></span>
+        <summary>添加自定义屏蔽词</summary>
+        <div class="custom-entry">
+          <input
+            id="custom-word"
+            type="text"
+            placeholder="输入一个词，例如：某品牌"
+            maxlength="100"
+          />
+          <button id="add-custom-word" class="secondary" type="button">
+            添加
+          </button>
+        </div>
+        <span id="custom-status" class="status" role="status"></span>
       </details>
-      <textarea id="words" hidden placeholder="每行一个词"></textarea>
-      <div id="editor-actions" hidden>
-        <button id="save-pack" type="button">保存词包</button>
-        <span id="save-status"></span>
-      </div>
       <p class="privacy">数据只保存在本机，不读取或上传 Cookie。</p>
     </main>
     <script src="popup.js"></script>

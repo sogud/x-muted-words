@@ -1,87 +1,78 @@
 #x-muted-words-panel {
-	position: fixed;
-	z-index: 2147483647;
-	right: 24px;
-	bottom: 24px;
-	width: 320px;
-	max-height: min(620px, 78vh);
-	overflow: auto;
-	padding: 16px;
-	color: #17202a;
+	box-sizing: border-box;
+	width: min(100% - 32px, 640px);
+	margin: 16px auto 24px;
+	padding: 20px;
+	color: #0f1419;
 	background: #fff;
 	border: 1px solid #cfd9de;
-	border-radius: 14px;
-	box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
-	font:
-		14px / 1.45 -apple-system,
-		BlinkMacSystemFont,
-		"Segoe UI",
-		sans-serif;
+	border-radius: 16px;
+	box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+	font: 14px / 1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-#x-muted-words-panel strong,
-#x-muted-words-panel small,
-.x-muted-summary {
-	display: block;
+#x-muted-words-panel h2 {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.3;
 }
-.x-muted-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
+#x-muted-words-panel p {
+	margin: 8px 0 0;
 }
-.x-muted-close {
-	width: 28px;
-	height: 28px;
-	padding: 0;
-	border: 0;
-	border-radius: 50%;
-	color: #536471;
-	background: transparent;
-	font-size: 24px;
-	line-height: 1;
-	cursor: pointer;
-}
-#x-muted-words-panel strong {
-	margin-bottom: 4px;
-	font-size: 16px;
-}
+.x-muted-description,
 .x-muted-summary,
-#x-muted-words-panel small {
+.x-muted-status {
 	color: #536471;
-	font-size: 12px;
 }
-.x-muted-list {
-	display: grid;
-	gap: 6px;
-	max-height: 300px;
-	overflow: auto;
-	margin: 12px 0;
-	padding: 10px;
+.x-muted-summary {
+	font-weight: 600;
+}
+#x-muted-words-panel details {
+	margin-top: 16px;
 	border: 1px solid #eff3f4;
 	border-radius: 10px;
 }
-.x-muted-list label {
-	overflow-wrap: anywhere;
+#x-muted-words-panel summary {
+	padding: 10px 12px;
+	color: #536471;
+	cursor: pointer;
+}
+.x-muted-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding: 0 12px 12px;
+}
+.x-muted-list span {
+	padding: 4px 8px;
+	border-radius: 6px;
+	background: #eff3f4;
 }
 .x-muted-actions {
 	display: flex;
-	flex-direction: column-reverse;
 	gap: 8px;
+	margin-top: 16px;
 }
 .x-muted-actions button {
-	width: 100%;
-	padding: 9px;
+	min-height: 40px;
+	padding: 8px 16px;
 	border: 0;
 	border-radius: 999px;
-	color: #fff;
-	background: #1d9bf0;
 	font-weight: 700;
 	cursor: pointer;
 }
-.x-muted-actions .x-muted-primary {
-	font-size: 14px;
+.x-muted-primary {
+	flex: 1;
+	color: #fff;
+	background: #0f1419;
+}
+.x-muted-secondary {
+	color: #0f1419;
+	background: #eff3f4;
 }
 .x-muted-actions button:disabled {
-	opacity: 0.6;
-	cursor: wait;
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+.x-muted-status {
+	min-height: 21px;
 }
