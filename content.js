@@ -1,8 +1,20 @@
 const PANEL_ID = "x-muted-words-panel";
 const BUILT_IN_WORDS = [
-	"加微信", "加V", "加我微信", "扫码加群", "免费领取", "限时优惠",
-	"全网最低", "代理加盟", "诚招代理", "课程优惠", "流量扶持",
-	"私聊了解", "点击链接", "关注公众号", "送彩金",
+	"加微信",
+	"加V",
+	"加我微信",
+	"扫码加群",
+	"免费领取",
+	"限时优惠",
+	"全网最低",
+	"代理加盟",
+	"诚招代理",
+	"课程优惠",
+	"流量扶持",
+	"私聊了解",
+	"点击链接",
+	"关注公众号",
+	"送彩金",
 ];
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -26,18 +38,27 @@ function isVisible(node) {
 }
 
 function findButton(pattern) {
-	return [...document.querySelectorAll('button, [role="button"]')].find((node) => {
-		if (!isVisible(node)) return false;
-		const label = [node.textContent, node.getAttribute("aria-label"), node.getAttribute("title")]
-			.filter(Boolean)
-			.join(" ");
-		return pattern.test(label.trim());
-	});
+	return [...document.querySelectorAll('button, [role="button"]')].find(
+		(node) => {
+			if (!isVisible(node)) return false;
+			const label = [
+				node.textContent,
+				node.getAttribute("aria-label"),
+				node.getAttribute("title"),
+			]
+				.filter(Boolean)
+				.join(" ");
+			return pattern.test(label.trim());
+		},
+	);
 }
 
 function findTextInput() {
-	return [...document.querySelectorAll('input[type="text"], input:not([type]), textarea]')]
-		.find(isVisible);
+	return [
+		...document.querySelectorAll(
+			'input[type="text"], input:not([type]), textarea]',
+		),
+	].find(isVisible);
 }
 
 async function addWord(word) {
@@ -66,7 +87,7 @@ function createPanel(words) {
 	const panel = document.createElement("section");
 	panel.id = PANEL_ID;
 	const title = document.createElement("strong");
-	title.textContent = "清净词";
+	title.textContent = "X屏蔽词助手"
 	const summary = document.createElement("span");
 	summary.className = "x-muted-summary";
 	const list = document.createElement("div");
@@ -74,7 +95,7 @@ function createPanel(words) {
 	const closeButton = document.createElement("button");
 	closeButton.className = "x-muted-close";
 	closeButton.type = "button";
-	closeButton.setAttribute("aria-label", "关闭 X Muted Words");
+	closeButton.setAttribute("aria-label", "关闭 X屏蔽词助手");
 	closeButton.textContent = "×";
 	const actions = document.createElement("div");
 	actions.className = "x-muted-actions";

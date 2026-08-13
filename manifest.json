@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "清净词｜X 屏蔽词助手",
+  "name": "X屏蔽词助手",
   "version": "0.2.0",
   "description": "一键把常见中文广告和引流词添加到 X 屏蔽词。",
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://x.com/*"],
   "action": {
-    "default_title": "X Muted Words",
+    "default_title": "X屏蔽词助手",
     "default_popup": "popup.html"
   },
   "content_scripts": [
