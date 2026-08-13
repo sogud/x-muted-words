@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "X Muted Words",
+  "version": "0.1.0",
+  "description": "在 X 屏蔽词设置页预览并批量添加本地词包。",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://x.com/*"],
+  "action": {
+    "default_title": "X Muted Words",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/settings/muted_keywords*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "16": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  }
+}
