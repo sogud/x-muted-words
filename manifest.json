@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "description": "在 X 屏蔽词设置页预览并批量添加本地词包。",
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://x.com/*"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://raw.githubusercontent.com/sogud/x-muted-words/*"
+  ],
   "action": {
     "default_title": "X Muted Words",
     "default_popup": "popup.html"

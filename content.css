@@ -1,9 +1,60 @@
-#x-muted-words-panel { position: fixed; z-index: 2147483647; top: 72px; right: 18px; width: 280px; max-height: 70vh; overflow: auto; padding: 16px; color: #17202a; background: #fff; border: 1px solid #cfd9de; border-radius: 14px; box-shadow: 0 8px 30px rgb(0 0 0 / 18%); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-#x-muted-words-panel strong, #x-muted-words-panel small, .x-muted-summary { display: block; }
-#x-muted-words-panel strong { margin-bottom: 4px; font-size: 16px; }
-.x-muted-summary, #x-muted-words-panel small { color: #536471; font-size: 12px; }
-.x-muted-list { display: grid; gap: 6px; margin: 14px 0; }
-.x-muted-list label { overflow-wrap: anywhere; }
-.x-muted-actions { display: flex; gap: 8px; }
-.x-muted-actions button { flex: 1; padding: 8px; border: 0; border-radius: 999px; color: #fff; background: #1d9bf0; font-weight: 700; cursor: pointer; }
-.x-muted-actions button:disabled { opacity: .6; cursor: wait; }
+#x-muted-words-panel {
+	position: fixed;
+	z-index: 2147483647;
+	top: 72px;
+	right: 18px;
+	width: 280px;
+	max-height: 70vh;
+	overflow: auto;
+	padding: 16px;
+	color: #17202a;
+	background: #fff;
+	border: 1px solid #cfd9de;
+	border-radius: 14px;
+	box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
+	font:
+		14px / 1.45 -apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
+}
+#x-muted-words-panel strong,
+#x-muted-words-panel small,
+.x-muted-summary {
+	display: block;
+}
+#x-muted-words-panel strong {
+	margin-bottom: 4px;
+	font-size: 16px;
+}
+.x-muted-summary,
+#x-muted-words-panel small {
+	color: #536471;
+	font-size: 12px;
+}
+.x-muted-list {
+	display: grid;
+	gap: 6px;
+	margin: 14px 0;
+}
+.x-muted-list label {
+	overflow-wrap: anywhere;
+}
+.x-muted-actions {
+	display: flex;
+	gap: 8px;
+}
+.x-muted-actions button {
+	flex: 1;
+	padding: 8px;
+	border: 0;
+	border-radius: 999px;
+	color: #fff;
+	background: #1d9bf0;
+	font-weight: 700;
+	cursor: pointer;
+}
+.x-muted-actions button:disabled {
+	opacity: 0.6;
+	cursor: wait;
+}

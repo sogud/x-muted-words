@@ -1,24 +1,30 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>X Muted Words</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <main>
-    <h1>X Muted Words</h1>
-    <p>本地管理词包，在 X 设置页预览并添加。</p>
-    <button id="open-settings" type="button">打开 X 屏蔽词设置</button>
-    <button id="edit-pack" class="secondary" type="button">编辑本地词包</button>
-    <textarea id="words" hidden placeholder="每行一个词"></textarea>
-    <div id="editor-actions" hidden>
-      <button id="save-pack" type="button">保存词包</button>
-      <span id="save-status"></span>
-    </div>
-    <p class="privacy">数据只保存在本机，不读取或上传 Cookie。</p>
-  </main>
-  <script src="popup.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X Muted Words</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>X Muted Words</h1>
+      <p>本地管理词包，在 X 设置页预览并添加。</p>
+      <button id="open-settings" type="button">打开 X 屏蔽词设置</button>
+      <button id="load-packs" class="secondary" type="button">
+        加载推荐词包
+      </button>
+      <button id="edit-pack" class="secondary" type="button">
+        编辑本地词包
+      </button>
+      <span id="pack-status" class="status" role="status"></span>
+      <textarea id="words" hidden placeholder="每行一个词"></textarea>
+      <div id="editor-actions" hidden>
+        <button id="save-pack" type="button">保存词包</button>
+        <span id="save-status"></span>
+      </div>
+      <p class="privacy">数据只保存在本机，不读取或上传 Cookie。</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
 </html>

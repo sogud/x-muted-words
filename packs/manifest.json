@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-13",
+  "packs": [
+    {
+      "id": "zh-spam",
+      "name": "中文广告与引流",
+      "description": "常见的广告、引流和营销骚扰词，仅供预览筛选。",
+      "url": "https://raw.githubusercontent.com/sogud/x-muted-words/main/packs/zh-spam.json"
+    },
+    {
+      "id": "general-spam",
+      "name": "通用垃圾信息",
+      "description": "常见的垃圾信息和批量营销表达。",
+      "url": "https://raw.githubusercontent.com/sogud/x-muted-words/main/packs/general-spam.json"
+    }
+  ]
+}
