@@ -7,7 +7,7 @@
 		sans-serif;
 }
 body {
-	width: 300px;
+	width: 320px;
 	margin: 0;
 	color: #17202a;
 	background: #fff;
@@ -17,7 +17,7 @@ main {
 }
 h1 {
 	margin: 0 0 6px;
-	font-size: 20px;
+	font-size: 22px;
 }
 p {
 	margin: 0 0 16px;
@@ -63,9 +63,20 @@ textarea {
 	color: #536471;
 	font-size: 12px;
 }
+.hint,
 .privacy {
-	margin-top: 16px;
+	margin-top: 10px;
 	margin-bottom: 0;
+	font-size: 12px;
+}
+details {
+	margin-top: 18px;
+	border-top: 1px solid #eff3f4;
+	padding-top: 12px;
+}
+summary {
+	color: #536471;
+	cursor: pointer;
 	font-size: 12px;
 }
 @media (prefers-color-scheme: dark) {

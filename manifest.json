@@ -1,13 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "X Muted Words",
-  "version": "0.1.0",
-  "description": "在 X 屏蔽词设置页预览并批量添加本地词包。",
+  "name": "清净词｜X 屏蔽词助手",
+  "version": "0.2.0",
+  "description": "一键把常见中文广告和引流词添加到 X 屏蔽词。",
   "permissions": ["storage", "tabs"],
-  "host_permissions": [
-    "https://x.com/*",
-    "https://raw.githubusercontent.com/sogud/x-muted-words/*"
-  ],
+  "host_permissions": ["https://x.com/*"],
   "action": {
     "default_title": "X Muted Words",
     "default_popup": "popup.html"

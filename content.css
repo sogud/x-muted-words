@@ -1,10 +1,10 @@
 #x-muted-words-panel {
 	position: fixed;
 	z-index: 2147483647;
-	top: 72px;
-	right: 18px;
-	width: 280px;
-	max-height: 70vh;
+	right: 24px;
+	bottom: 24px;
+	width: 320px;
+	max-height: min(620px, 78vh);
 	overflow: auto;
 	padding: 16px;
 	color: #17202a;
@@ -23,6 +23,24 @@
 .x-muted-summary {
 	display: block;
 }
+.x-muted-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+.x-muted-close {
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	color: #536471;
+	background: transparent;
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+}
 #x-muted-words-panel strong {
 	margin-bottom: 4px;
 	font-size: 16px;
@@ -35,24 +53,33 @@
 .x-muted-list {
 	display: grid;
 	gap: 6px;
-	margin: 14px 0;
+	max-height: 300px;
+	overflow: auto;
+	margin: 12px 0;
+	padding: 10px;
+	border: 1px solid #eff3f4;
+	border-radius: 10px;
 }
 .x-muted-list label {
 	overflow-wrap: anywhere;
 }
 .x-muted-actions {
 	display: flex;
+	flex-direction: column-reverse;
 	gap: 8px;
 }
 .x-muted-actions button {
-	flex: 1;
-	padding: 8px;
+	width: 100%;
+	padding: 9px;
 	border: 0;
 	border-radius: 999px;
 	color: #fff;
 	background: #1d9bf0;
 	font-weight: 700;
 	cursor: pointer;
+}
+.x-muted-actions .x-muted-primary {
+	font-size: 14px;
 }
 .x-muted-actions button:disabled {
 	opacity: 0.6;
