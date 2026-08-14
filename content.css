@@ -1,14 +1,18 @@
 #x-muted-words-panel {
 	box-sizing: border-box;
-	width: min(100% - 32px, 640px);
-	margin: 16px auto 24px;
-	padding: 20px;
+	width: min(100% - 32px, 560px);
+	margin: 16px auto 20px;
+	padding: 16px 18px;
 	color: #0f1419;
 	background: #fff;
 	border: 1px solid #cfd9de;
 	border-radius: 16px;
 	box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
-	font: 14px / 1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font:
+		14px / 1.5 -apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
 }
 #x-muted-words-panel h2 {
 	margin: 0;

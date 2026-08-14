@@ -1,13 +1,32 @@
 const PANEL_ID = "x-muted-words-panel";
 const BUILT_IN_WORDS = [
-	"加微信", "加V", "加我微信", "扫码加群", "免费领取", "限时优惠",
-	"全网最低", "代理加盟", "诚招代理", "课程优惠", "流量扶持",
-	"私聊了解", "点击链接", "关注公众号", "送彩金",
+	"加微信",
+	"加V",
+	"加我微信",
+	"扫码加群",
+	"免费领取",
+	"限时优惠",
+	"全网最低",
+	"代理加盟",
+	"诚招代理",
+	"课程优惠",
+	"流量扶持",
+	"私聊了解",
+	"点击链接",
+	"关注公众号",
+	"送彩金",
 ];
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function normalize(value) {
-	return [...new Set(value.split(/\r?\n/).map((word) => word.trim()).filter(Boolean))];
+	return [
+		...new Set(
+			value
+				.split(/\r?\n/)
+				.map((word) => word.trim())
+				.filter(Boolean),
+		),
+	];
 }
 
 function isVisible(node) {
@@ -19,22 +38,35 @@ function pageText() {
 }
 
 function findButton(pattern) {
-	return [...document.querySelectorAll('button, [role="button"]')].find((node) => {
-		if (!isVisible(node)) return false;
-		const label = [node.textContent, node.getAttribute("aria-label"), node.getAttribute("title")]
-			.filter(Boolean)
-			.join(" ");
-		return pattern.test(label.trim());
-	});
+	return [...document.querySelectorAll('button, [role="button"]')].find(
+		(node) => {
+			if (!isVisible(node)) return false;
+			const label = [
+				node.textContent,
+				node.getAttribute("aria-label"),
+				node.getAttribute("title"),
+			]
+				.filter(Boolean)
+				.join(" ");
+			return pattern.test(label.trim());
+		},
+	);
 }
 
 function findTextInput() {
-	return [...document.querySelectorAll('input[type="text"], input:not([type]), textarea')]
-		.find(isVisible);
+	return [
+		...document.querySelectorAll(
+			'input[type="text"], input:not([type]), textarea',
+		),
+	].find(isVisible);
 }
 
 function findPageContainer() {
-	return document.querySelector('[role="main"]') || document.querySelector("main") || document.body;
+	return (
+		document.querySelector('[role="main"]') ||
+		document.querySelector("main") ||
+		document.body
+	);
 }
 
 async function addWord(word) {
@@ -44,7 +76,10 @@ async function addWord(word) {
 	await sleep(300);
 	const input = findTextInput();
 	if (!input) throw new Error("找不到输入框");
-	const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
+	const setter = Object.getOwnPropertyDescriptor(
+		HTMLInputElement.prototype,
+		"value",
+	)?.set;
 	if (setter && input instanceof HTMLInputElement) setter.call(input, word);
 	else input.value = word;
 	input.dispatchEvent(new Event("input", { bubbles: true }));
@@ -90,11 +125,15 @@ function createPanel(words) {
 	let missing = [];
 	const render = () => {
 		const existingText = pageText();
-		missing = words.filter((word) => !existingText.includes(word.toLocaleLowerCase()));
+		missing = words.filter(
+			(word) => !existingText.includes(word.toLocaleLowerCase()),
+		);
 		summary.textContent = missing.length
 			? `已准备 ${missing.length} 个词，确认后将逐个添加。`
 			: "这些词已经添加过了。";
-		addButton.textContent = missing.length ? `一键添加 ${missing.length} 个词` : "已全部添加";
+		addButton.textContent = missing.length
+			? `开始屏蔽 ${missing.length} 个词`
+			: "已全部屏蔽";
 		addButton.disabled = missing.length === 0;
 		list.replaceChildren();
 		for (const word of missing) {
