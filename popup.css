@@ -38,6 +38,37 @@ button.secondary {
 	color: #0f1419;
 	background: #eff3f4;
 }
+#update-pack {
+	margin-top: 8px;
+}
+#pack-status {
+	min-height: 18px;
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+.pack-list {
+	display: grid;
+	gap: 6px;
+	margin-top: 10px;
+}
+.pack-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 8px 10px;
+	border: 1px solid #eff3f4;
+	border-radius: 8px;
+	background: #f7f9f9;
+	font-size: 12px;
+}
+.pack-item strong {
+	font-size: 13px;
+}
+.pack-item span {
+	color: #536471;
+	white-space: nowrap;
+}
 .hint,
 .privacy,
 .status {
@@ -49,6 +80,59 @@ details {
 	margin-top: 18px;
 	border-top: 1px solid #eff3f4;
 	padding-top: 12px;
+}
+.filter-settings {
+	padding-bottom: 2px;
+}
+.toggle-row,
+.select-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 12px;
+	font-size: 13px;
+}
+.toggle-row {
+	justify-content: flex-start;
+}
+.select-row select {
+	max-width: 150px;
+	padding: 5px 6px;
+	border: 1px solid #cfd9de;
+	border-radius: 6px;
+	background: #fff;
+	font: inherit;
+}
+.filter-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 10px;
+}
+.filter-actions button {
+	flex: 1;
+}
+.filter-settings .custom-entry {
+	margin-top: 12px;
+}
+#custom-patterns {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 12px;
+	padding: 8px;
+	border: 1px solid #cfd9de;
+	border-radius: 8px;
+	font:
+		12px / 1.4 ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		monospace;
+	resize: vertical;
+}
+#save-filter-rules {
+	margin-top: 8px;
+	color: #0f1419;
+	background: #eff3f4;
 }
 summary {
 	color: #536471;

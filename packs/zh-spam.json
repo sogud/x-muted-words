@@ -1,7 +1,9 @@
 {
   "id": "zh-spam",
-  "version": 2,
-  "updatedAt": "2026-08-13",
+  "name": "中文广告与引流",
+  "category": "spam",
+  "version": 3,
+  "updatedAt": "2026-08-15",
   "language": "zh-CN",
   "words": [
     "加微信",

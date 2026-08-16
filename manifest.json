@@ -1,24 +1,35 @@
 {
   "manifest_version": 3,
   "name": "X屏蔽词助手",
-  "version": "0.2.0",
-  "description": "一键把常见中文广告和引流词添加到 X 屏蔽词。",
-  "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://x.com/*"],
+  "version": "0.6.3",
+  "description": "添加中文屏蔽词，并在本地识别 X 时间线和评论区里的垃圾引流。",
+  "permissions": ["storage", "tabs", "debugger"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://raw.githubusercontent.com/sogud/x-muted-words/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_title": "X屏蔽词助手",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
   },
   "content_scripts": [
     {
-      "matches": ["https://x.com/settings/muted_keywords*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
+      "matches": ["https://x.com/*"],
+      "js": ["rules.js", "content.js", "reply-filter.js"],
+      "css": ["content.css", "reply-filter.css"]
     }
   ],
   "icons": {
-    "16": "icon.svg",
-    "48": "icon.svg",
-    "128": "icon.svg"
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
   }
 }

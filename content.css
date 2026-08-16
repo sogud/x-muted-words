@@ -1,13 +1,11 @@
 #x-muted-words-panel {
 	box-sizing: border-box;
-	width: min(100% - 32px, 560px);
-	margin: 16px auto 20px;
-	padding: 16px 18px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 16px 16px 20px;
 	color: #0f1419;
 	background: #fff;
-	border: 1px solid #cfd9de;
-	border-radius: 16px;
-	box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+	border-bottom: 1px solid #eff3f4;
 	font:
 		14px / 1.5 -apple-system,
 		BlinkMacSystemFont,
@@ -17,6 +15,7 @@
 #x-muted-words-panel h2 {
 	margin: 0;
 	font-size: 20px;
+	font-weight: 700;
 	line-height: 1.3;
 }
 #x-muted-words-panel p {
@@ -32,24 +31,32 @@
 }
 #x-muted-words-panel details {
 	margin-top: 16px;
-	border: 1px solid #eff3f4;
-	border-radius: 10px;
+	border-top: 1px solid #eff3f4;
 }
 #x-muted-words-panel summary {
-	padding: 10px 12px;
-	color: #536471;
+	padding: 12px 0 8px;
+	color: #0f1419;
 	cursor: pointer;
+	font-weight: 700;
 }
 .x-muted-list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 6px;
-	padding: 0 12px 12px;
+	max-height: 180px;
+	overflow-y: auto;
+	padding: 0 0 12px;
 }
 .x-muted-list span {
 	padding: 4px 8px;
-	border-radius: 6px;
+	color: #0f1419;
 	background: #eff3f4;
+	border-radius: 999px;
+	font-size: 13px;
+}
+.x-muted-empty {
+	color: #536471 !important;
+	background: transparent !important;
 }
 .x-muted-actions {
 	display: flex;
@@ -64,6 +71,10 @@
 	font-weight: 700;
 	cursor: pointer;
 }
+.x-muted-actions button:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
 .x-muted-primary {
 	flex: 1;
 	color: #fff;
@@ -72,10 +83,6 @@
 .x-muted-secondary {
 	color: #0f1419;
 	background: #eff3f4;
-}
-.x-muted-actions button:disabled {
-	cursor: not-allowed;
-	opacity: 0.5;
 }
 .x-muted-status {
 	min-height: 21px;

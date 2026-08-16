@@ -11,7 +11,63 @@
       <h1>X屏蔽词助手</h1>
       <p>帮你把常见广告和引流词添加到 X 的屏蔽词。</p>
       <button id="open-settings" type="button">开始屏蔽</button>
-      <p class="hint">点击后打开 X 设置页，再按页面提示完成添加。</p>
+      <button id="update-pack" class="secondary" type="button">
+        更新远程词包
+      </button>
+      <p id="pack-status" class="status" role="status">正在检查远程词包……</p>
+      <div id="pack-list" class="pack-list" aria-label="词包分类"></div>
+      <p class="hint">词包统一维护在 GitHub。打开设置页后可直接批量添加。</p>
+      <details class="filter-settings">
+        <summary>可选：过滤时间线和评论区</summary>
+        <label class="toggle-row">
+          <input id="filter-enabled" type="checkbox" />
+          <span>启用本地评论过滤（不影响手机端）</span>
+        </label>
+        <label class="select-row">
+          <span>隐藏方式</span>
+          <select id="filter-mode">
+            <option value="collapse">折叠并显示原因</option>
+            <option value="hide">直接隐藏</option>
+            <option value="dim">模糊显示</option>
+          </select>
+        </label>
+        <label class="select-row">
+          <span>识别强度</span>
+          <select id="filter-strictness">
+            <option value="relaxed">保守</option>
+            <option value="balanced">平衡</option>
+            <option value="aggressive">积极</option>
+          </select>
+        </label>
+        <div class="custom-entry">
+          <input
+            id="whitelist-handle"
+            type="text"
+            placeholder="信任账号，例如：@用户名"
+            maxlength="20"
+          />
+          <button id="add-whitelist" class="secondary" type="button">
+            信任
+          </button>
+        </div>
+        <textarea
+          id="custom-patterns"
+          rows="3"
+          placeholder="自定义过滤词或正则，每行一条，例如：\n完整版来了\n/私聊.*资源/i"
+        ></textarea>
+        <button id="save-filter-rules" class="secondary" type="button">
+          保存自定义过滤规则
+        </button>
+        <div class="filter-actions">
+          <button id="rescan-filter" class="secondary" type="button">
+            立即扫描
+          </button>
+          <button id="reveal-all" class="secondary" type="button">
+            恢复本页
+          </button>
+        </div>
+        <span id="filter-stats" class="status" role="status"></span>
+      </details>
       <details>
         <summary>添加自定义屏蔽词</summary>
         <div class="custom-entry">
@@ -29,6 +85,7 @@
       </details>
       <p class="privacy">数据只保存在本机，不读取或上传 Cookie。</p>
     </main>
+    <script src="rules.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

@@ -1,12 +1,22 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-15",
   "packs": [
     {
       "id": "zh-spam",
       "name": "中文广告与引流",
-      "description": "常见的广告、引流和营销骚扰词，仅供预览筛选。",
+      "category": "spam",
+      "description": "常见的广告、引流和营销骚扰词。",
+      "file": "zh-spam.json",
       "url": "https://raw.githubusercontent.com/sogud/x-muted-words/main/packs/zh-spam.json"
+    },
+    {
+      "id": "zh-yellow",
+      "name": "黄色推广与可疑变体",
+      "category": "adult",
+      "description": "黄推评论中出现的性暗示、线下约人及常见变体词，包含需要谨慎确认的短词。",
+      "file": "zh-yellow.json",
+      "url": "https://raw.githubusercontent.com/sogud/x-muted-words/main/packs/zh-yellow.json"
     }
   ]
 }
