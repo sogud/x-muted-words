@@ -3,3 +3,6 @@
 .artifacts/
 dist/
 *.zip
+# agentspace harness 内部文件，不属于公开仓内容
+project.json
+TODO.md
